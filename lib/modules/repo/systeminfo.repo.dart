@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:satu/models/app/rest.api.model.dart';
 import 'package:satu/utils/http.dart';
+import 'dart:convert'; // Add this line
 
 class SystemInfoRepo {
   final rest = Get.put(Http());
@@ -41,6 +42,10 @@ class SystemInfoRepo {
   }
 
   Future<RestApi> getSystemSave({required Map<String, dynamic> body}) async {
+    debugPrint("###############TOP");
+    debugPrint("Complete JSON body being sent to API:");
+    debugPrint(const JsonEncoder.withIndent('  ').convert(body));
+    debugPrint("###############BOTTOM");
     try {
       final res = await rest.post('/assm/equipment/forms/save', body);
       debugPrint("res :: $res");

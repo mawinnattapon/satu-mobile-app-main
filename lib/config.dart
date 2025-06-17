@@ -20,5 +20,6 @@ class Config {
   -----------Production-----------
   */
   static String env = "production";
-  static String restUrl = "https://cmms.satu-innovative.com/api";
+  // static String restUrl = "https://cmms.satu-innovative.com/api";
+  static String restUrl = "http://localhost:5401";
 }

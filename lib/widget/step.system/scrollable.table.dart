@@ -8,10 +8,13 @@ import 'package:satu/constants/app.textstyle.dart';
 class ScrollableTable extends StatefulWidget {
   final List<dynamic> tableLiter;
   final List<dynamic> tableGallon;
+  final Function(List<dynamic> liter, List<dynamic> gallon)? onDataChanged;
+  
   const ScrollableTable({
     super.key,
     required this.tableLiter,
     required this.tableGallon,
+    this.onDataChanged,
   });
 
   @override
@@ -316,6 +319,11 @@ class _ScrollableTableState extends State<ScrollableTable> {
        for(int i = 0; i < allGallonValues.length; i++) {
         processedGallonTable[index][i]['value'] = allGallonValues[i]?.toString() ?? '';
       }
+
+      // Call the callback function to send updated table data back to parent widget
+      if (widget.onDataChanged != null) {
+        widget.onDataChanged!(processedLiterTable, processedGallonTable);
+      }
     });
   }
 
@@ -361,14 +369,14 @@ class _ScrollableTableState extends State<ScrollableTable> {
     return const TableRow(
       children: [
         Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('', textAlign: TextAlign.center, style: TextStyle(fontWeight: FontWeight.bold)))),
-        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[gal/min]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
+        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[gal/min..]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
         Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
-        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[gal/min]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
-        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[gal/min]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
-        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[psi]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
-        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[psi]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
-        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[psi]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
-        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[psi]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
+        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[gal/min..]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
+        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[gal/min..]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
+        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[psi_xxxx]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
+        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[psi_xxxx]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
+        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[psi_xxxx]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
+        Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[psi_xxxx]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
         Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[%]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
         Center(child: Padding(padding: EdgeInsets.all(8.0), child: Text('[%]', textAlign: TextAlign.center, style: TextStyle(fontSize: 14)))),
       ],

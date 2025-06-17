@@ -449,6 +449,11 @@ class _StepSystemScreenState extends State<StepSystemScreen> {
                                               answer.assmAwsPayload['liter'],
                                           tableGallon:
                                               answer.assmAwsPayload['gallon'],
+                                          onDataChanged: (liter, gallon) {
+                                            // Update the answer payload with complete table data
+                                            answer.assmAwsPayload['liter'] = liter;
+                                            answer.assmAwsPayload['gallon'] = gallon;
+                                          },
                                         )
                                       : Container();
                                 },

@@ -33,7 +33,7 @@ class AppTheme {
         TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
       },
     ),
-    cardTheme: CardTheme(
+    cardTheme: CardThemeData(
       shadowColor: AppColor.primary.shade900,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.all(Radius.circular(AppSize.borderRadiusDefault)),
