@@ -11,11 +11,8 @@ PODS:
   - flutter_inappwebview_ios/Core (0.0.1):
     - Flutter
     - OrderedSet (~> 5.0)
-  - FMDB (2.7.11):
-    - FMDB/standard (= 2.7.11)
   - FMDB/SQLCipher (2.7.11):
     - SQLCipher (~> 4.0)
-  - FMDB/standard (2.7.11)
   - GoogleDataTransport (9.4.1):
     - GoogleUtilities/Environment (~> 7.7)
     - nanopb (< 2.30911.0, >= 2.30908.0)
@@ -68,7 +65,7 @@ PODS:
     - GTMSessionFetcher/Core (< 3.0, >= 1.1)
     - MLImage (= 1.0.0-beta4)
     - MLKitCommon (~> 9.0)
-  - mobile_scanner (3.5.4):
+  - mobile_scanner (3.5.6):
     - Flutter
     - GoogleMLKit/BarcodeScanning (~> 4.0.0)
   - nanopb (2.30910.0):
@@ -88,9 +85,9 @@ PODS:
   - shared_preferences_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
-  - sqflite (0.0.3):
+  - sqflite_darwin (0.0.4):
     - Flutter
-    - FMDB (>= 2.7.5)
+    - FlutterMacOS
   - sqflite_sqlcipher (0.0.1):
     - Flutter
     - FMDB/SQLCipher (~> 2.7.5)
@@ -113,7 +110,7 @@ DEPENDENCIES:
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - sensors_plus (from `.symlinks/plugins/sensors_plus/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
-  - sqflite (from `.symlinks/plugins/sqflite/ios`)
+  - sqflite_darwin (from `.symlinks/plugins/sqflite_darwin/darwin`)
   - sqflite_sqlcipher (from `.symlinks/plugins/sqflite_sqlcipher/ios`)
   - url_launcher_ios (from `.symlinks/plugins/url_launcher_ios/ios`)
 
@@ -154,16 +151,16 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/sensors_plus/ios"
   shared_preferences_foundation:
     :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
-  sqflite:
-    :path: ".symlinks/plugins/sqflite/ios"
+  sqflite_darwin:
+    :path: ".symlinks/plugins/sqflite_darwin/darwin"
   sqflite_sqlcipher:
     :path: ".symlinks/plugins/sqflite_sqlcipher/ios"
   url_launcher_ios:
     :path: ".symlinks/plugins/url_launcher_ios/ios"
 
 SPEC CHECKSUMS:
-  camera_avfoundation: 7262a4e34c2e028f6aa5fb523ae74c9b74d3bd76
-  device_info_plus: 335f3ce08d2e174b9fdc3db3db0f4e3b1f66bd89
+  camera_avfoundation: be3be85408cd4126f250386828e9b1dfa40ab436
+  device_info_plus: 71ffc6ab7634ade6267c7a93088ed7e4f74e5896
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_inappwebview_ios: 25b61a1b550d1068e4ddaf490fc1d03c2ce6828d
   FMDB: 57486c1117fd8e0e6b947b2f54c3f42bf8e57a4e
@@ -177,15 +174,15 @@ SPEC CHECKSUMS:
   MLKitBarcodeScanning: 04e264482c5f3810cb89ebc134ef6b61e67db505
   MLKitCommon: c1b791c3e667091918d91bda4bba69a91011e390
   MLKitVision: 8baa5f46ee3352614169b85250574fde38c36f49
-  mobile_scanner: cfe30e30bc1bc332450d644a6ff238160f2b0232
+  mobile_scanner: b67191637a5ea7ba15652ca208069d2bae1900ab
   nanopb: 438bc412db1928dac798aa6fd75726007be04262
   OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
-  package_info_plus: 566e1b7a2f3900e4b0020914ad3fc051dcc95596
-  path_provider_foundation: 2a68637f8a62df7f6e790a428d1bdf72cb4e2d59
+  package_info_plus: af8e2ca6888548050f16fa2f1938db7b5a5df499
+  path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
   PromisesObjC: f5707f49cb48b9636751c5b2e7d227e43fba9f47
   sensors_plus: 809f7e76b18439344b148b2730634b59d645f7eb
-  shared_preferences_foundation: 4e65c567e7877037d328829a522222c938bf308c
-  sqflite: 5b24d06a453c198c13b305ceea4b4286cc07cfe4
+  shared_preferences_foundation: 9e1978ff2562383bd5676f64ec4e9aa8fa06a6f7
+  sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
   sqflite_sqlcipher: 704db283a7f99b5b0161bebb3575e108612cf6b9
   SQLCipher: 905b145f65f349f26da9e60a19901ad24adcd381
   url_launcher_ios: 694010445543906933d732453a59da0a173ae33d

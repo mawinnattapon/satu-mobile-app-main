@@ -34,11 +34,40 @@ class _SystemInfoScreenState extends State<SystemInfoScreen> {
   }
 
   void init() async {
+    debugPrint('=== INIT START ===');
+    debugPrint('Get.arguments: ${Get.arguments}');
+    
     Loading.show();
-    data = Get.arguments['formstype'];
-    await systemCtrl.fetchSystem(eqmId: scannerCtrl.scanModel!.id!, typeId: data['value']);
-    setState(() {});
-    Loading.close();
+    
+    // More robust null check for Get.arguments
+    final arguments = Get.arguments;
+    if (arguments == null) {
+      debugPrint('ERROR: Get.arguments is null');
+      Loading.close();
+      Get.back();
+      return;
+    }
+    
+    if (arguments['formstype'] == null) {
+      debugPrint('ERROR: formstype is null in arguments: $arguments');
+      Loading.close();
+      Get.back();
+      return;
+    }
+    
+    debugPrint('Arguments valid, proceeding...');
+    data = arguments['formstype'];
+    debugPrint('Data set: $data');
+    
+    try {
+      await systemCtrl.fetchSystem(eqmId: scannerCtrl.scanModel!.id!, typeId: data['value']);
+      setState(() {});
+      debugPrint('=== INIT SUCCESS ===');
+    } catch (e) {
+      debugPrint('ERROR in fetchSystem: $e');
+    } finally {
+      Loading.close();
+    }
   }
 
   @override

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:satu/constants/app.colors.dart';
 
 class AppTextStyle {
@@ -7,27 +6,27 @@ class AppTextStyle {
 
   static TextStyle textprimary = TextStyle(
     color: AppColor.primary,
-    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontFamily: 'SF Pro Text',
   );
 
   static TextStyle textwhite = TextStyle(
     color: AppColor.white,
-    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontFamily: 'SF Pro Text',
   );
 
   static TextStyle textblack = TextStyle(
     color: AppColor.black,
-    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontFamily: 'SF Pro Text',
   );
 
   static TextStyle textsecondary = TextStyle(
     color: AppColor.secondary,
-    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontFamily: 'SF Pro Text',
   );
 
   static TextStyle textdart = TextStyle(
     color: AppColor.dark.shade300,
-    fontFamily: GoogleFonts.kanit().fontFamily,
+    fontFamily: 'SF Pro Text',
   );
 
   static TextStyle p1Style() => textprimary.copyWith(
@@ -133,7 +132,7 @@ class AppTextStyle {
         color: colors,
         fontWeight: fontWeight,
       ).apply(
-        fontFamily: GoogleFonts.kanit().fontFamily,
+        fontFamily: 'SF Pro Text',
       );
 
   static TextStyle setStyle({required Color colors, required double size}) =>
@@ -141,6 +140,6 @@ class AppTextStyle {
         fontSize: size,
         color: colors,
       ).apply(
-        fontFamily: GoogleFonts.kanit().fontFamily,
+        fontFamily: 'SF Pro Text',
       );
 }

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:satu/constants/app.colors.dart';
 
 class TTextTheme {
   TTextTheme._();
 
   static TextStyle text = TextStyle(
-      fontFamily: GoogleFonts.kanit().fontFamily, color: AppColor.black);
+      fontFamily: 'SF Pro Text', color: AppColor.black);
 
   static TextTheme textTheme = TextTheme(
     bodyLarge: text.copyWith(fontSize: 16.0),
