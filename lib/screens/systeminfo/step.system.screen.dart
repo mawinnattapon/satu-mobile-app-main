@@ -178,7 +178,7 @@ class _StepSystemScreenState extends State<StepSystemScreen> {
                       ),
                       question.detail != null && question.detail!.isNotEmpty
                           ? Padding(
-                              padding: const EdgeInsets.only(top: 8),
+                              padding: const EdgeInsets.only(top: 3),
                               child: Text(
                                 '     ${question.detail}',
                                 style: AppTextStyle.b2Style(),
